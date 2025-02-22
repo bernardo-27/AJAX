@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Manage Profile</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+	<header>
+        <div class="title"> <!-- Left Side-->
+        	    <h1>Advance <br> Mobile Development Hybrid</h1>
+        </div>
+    
+        <div class="group-photo">
+            <div class="person nishren">
+                <img class="nishrenimg" src="./images/nishren1.png" alt="">
+                <p class="caption-nishren">Nishren V. Hernandez</p>
+            </div>
+            <div class="person catriz">
+                <p class="caption-catriz">Bernardo F.</p>
+                <p class="caption-catriz1"> Catriz Jr.</p>
+                <img class="catrizimg" src="./images/catriz.png" alt="">
+
+            </div>
+            <div class="person isidro">
+                <img class="isidroimg" src="./images/isidro.png" alt="">
+                <p class="caption-isidro">Azhly Angel <br> </p>
+                <p class="caption-isidro1">V. Isidro</p>
+            </div>
+            <div class="person leal">
+                <p class="caption-leal">Marjolyn</p>
+                <p class="caption-leal1">Leal</p>
+                <img class="lealimg" src="./images/leal.png" alt="">
+            </div>
+        </div>
+    </header>
+
+	<!-- Lastname, Firstname Section-->
+	<div id="load-profile-here"></div><!-- Describe this line-->
+	<script type="text/javascript">
+		    $(document).ready(function(){//
+            $.ajax({
+			    type: "Post",
+			    url: "load-profile.php",
+			    cache: false,
+			    success: function(data) {
+			        $("#load-profile-here").html(data);
+			    },
+			    error: function(xhr, status, error) {
+			        // Log detailed error information to console
+			        console.error("An error occurred:", xhr, status, error);
+			        
+			        // Display a more informative error message
+			        alert("An error occurred. Please check the console for more details.");
+			    }
+			});
+
+  		});
+	</script>
+	
+</body>
+</html>
