@@ -142,11 +142,11 @@ CREATE TABLE `tbl_profile` (
 /*Data for the table `tbl_profile` */
 
 insert  into `tbl_profile`(`profileID`,`lastname`,`firstname`,`middlename`,`address`) values 
-(1,'Hernandez','Nishren','Valdez','Conconig East, Sta. Lucia, Ilocos Sur'),
-(2,'Catriz Jr.','Bernardo','Fabro','Cabulanglangan, Tagudin, Ilocos Sur'),
-(3,'Isidro','Azhly Angel','Valdez','Conconig East, Sta. Lucia, Ilocos Sur'),
-(4,'Leal','Marjolyn','',''),
-(5,'Delos Reyes','Jim-mar','Flor','las-ud'),
+(1,'Hernandez','N','',''),
+(2,'Catriz','B','',''),
+(3,'Isidro','A','',''),
+(4,'Leal','M','',''),
+(5,'Delos Reyes','J','',''),
 (6,'BSIT','3A','',''),
 (7,'','','','');
 
