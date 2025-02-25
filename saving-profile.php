@@ -17,10 +17,10 @@ if(isset($_POST['profileID'])){
   	$sql = "INSERT INTO tbl_profile (lastname,firstname,middlename,address)
           VALUES('$lastname','$firstname','$middlename','$address')";
   }
-
+  
 
 	if ($con->query($sql) === TRUE) {
-	  echo "Profile Saved successfully";
+	  // echo "Profile Saved successfully";
 	} else {
 	  echo "Error: " . $sql . "<br>" . $con->error;
 	}

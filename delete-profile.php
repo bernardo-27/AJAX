@@ -10,7 +10,7 @@ if(isset($_POST['profileID'])){
 
 
 	if ($con->query($sql) === TRUE) {
-	  echo "Deleted successfully";
+	//   echo "Deleted successfully";
 	} else {
 	  echo "Error: " . $sql . "<br>" . $con->error;
 	}

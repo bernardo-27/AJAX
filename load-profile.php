@@ -15,6 +15,9 @@ include_once "connect.php";
 
 	</head>
 	<body>
+
+<h1 class="text-center py-3 fw-bold">Manage Profile</h1>
+
 		<div class="container justify-content-end mt-3 mb-3" >
 				<a class="add-record btn btn-primary" align="right" href="#" data-bs-toggle='modal' data-bs-target='#profile-modal'>+ Add record</a>
     <div id="list-profile"></div>
@@ -91,7 +94,7 @@ include_once "connect.php";
       <!-- Modal body -->
       <div class="modal-body">
         <div>
-          <p>Agpaypayso ka, edelete mo datoy nga record?</p>
+          <p>Are you sure you want to delete this record?</p>
           <p class="alert alert-warning" id="to-delete"></p>
           
         </div>
@@ -99,8 +102,8 @@ include_once "connect.php";
 
       <!-- Modal footer -->
       <div class="modal-footer">
-          <button type="submit" class="btn-delete btn btn-danger" data-bs-dismiss="modal">Wen</button>
-        <button type="button" class="btn-cancel btn btn-primary" data-bs-dismiss="modal">Haan kadi</button>
+          <button type="submit" class="btn-delete btn btn-danger" data-bs-dismiss="modal">Yes</button>
+        <button type="button" class="btn-cancel btn btn-primary" data-bs-dismiss="modal">No</button>
       </div>
 
     </div>
@@ -130,6 +133,7 @@ include_once "connect.php";
           url:'saving-profile.php',
           data: profile_form,
           success: function(response){ 
+            // $("#deletedAlert").text("Profile Successfully Added!").fadeIn(500).delay(1000).fadeOut(500);
             alert(response);
               $.ajax({
                   type:"POST", 
@@ -138,6 +142,8 @@ include_once "connect.php";
                   cache:false,
                   success:function(data) {
                     $("#list-profile").html(data);
+
+                    // hidding modal when click save
                     var myModal = new bootstrap.Modal(document.getElementById('profile-modal'));
                     myModal.hide();
                     location.reload();
@@ -145,6 +151,7 @@ include_once "connect.php";
                   }
                 });
                 $("#profile-form")[0].reset();
+                
 
           },
         });

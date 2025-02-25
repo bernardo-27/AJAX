@@ -1,10 +1,5 @@
 <div class="container mt-4">
 
-      <!-- Alert Message (Initially Hidden) -->
-      <div id="deletedAlert" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
-        Profile successfully deleted!
-    </div>
-
 
 
     <div class="table-responsive">
@@ -92,7 +87,7 @@
         if ($("#profile-form input").filter(function(){ return this.value.trim() === ""; }).length) {
             alert("Please fill out all fields!");
         } else {
-            $("#deletedAlert").text("Profile Successfully Added!").fadeIn(500).delay(2000).fadeOut(500);
+            $("#deletedAlert").text("Profile Successfully Added!").fadeIn(500).delay(1000).fadeOut(500);
         }
     });
 });
